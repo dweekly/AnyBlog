@@ -377,6 +377,7 @@ textarea {
 	border: 2px solid #87cef6;
 	box-sizing: border-box;
 	margin: auto;
+	margin-top: 30px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
