@@ -42,7 +42,7 @@ app.locals.userDescription = userDescription;
 app.locals.formatTime = function(time) {
   return moment(time).format('MMMM Do YYYY, h:mm a');
 };
-// Generate a snippet of the given text with the given lenght, rounded up to the
+// Generate a snippet of the given text with the given length, rounded up to the
 // nearest word.
 app.locals.snippet = function(text, length) {
   if (text.length < length) {
