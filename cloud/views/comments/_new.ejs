@@ -1,0 +1,18 @@
+<form class='new_comment' method='post' action="<%= '/posts/' + post.id + '/comments' %>">
+  <div class="form_title">Write a comment</div>
+  <div class='form_section'>
+    <label>Your Name</label>
+    <input name='author' class='comment_author' placeholder="Your name" />
+  </div>
+  <div class='form_section'>
+    <label>Your Email</label>
+    <input name='author_email' class='comment_author' placeholder = "Your email" />
+  </div>
+  <div class='form_section'>
+    <label>Comment</label>
+    <textarea name='body' class='comment_body'></textarea>
+  </div>
+  <div class="write_comment">
+    <input type='submit' class="button_write_comment" value="Write a comment" />
+  </div>
+</form>

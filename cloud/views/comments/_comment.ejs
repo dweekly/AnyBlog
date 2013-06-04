@@ -1,0 +1,8 @@
+<div class="comment">
+    <div class="picture">
+        <% hash = hex_md5(comment.get("author_email") || ""); %>
+        <img src=<%= "https://secure.gravatar.com/avatar/" + hash + "?size=130&default=https%3A%2F%2Fwww.parse.com%2Fimages%2Faccounts%2Fno_avatar.png" %> />
+    </div>
+    <div class="username"><%= comment.get('author') %></div>
+    <p><%= comment.get('body') %></p>
+</div>

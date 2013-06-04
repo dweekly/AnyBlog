@@ -1,0 +1,19 @@
+include ../_header
+
+.sidebar
+  .picture
+    - var hash = hex_md5(userEmail)
+    img(src="https://secure.gravatar.com/avatar/" + hash + "?size=210&default=https%3A%2F%2Fwww.parse.com%2Fimages%2Faccounts%2Fno_avatar.png")
+
+  .username #{userDisplayName}
+  .blog_description #{userDescription}
+
+.main_content
+  - posts.forEach(function(post) {
+    .post_link
+      h1
+        a(href='/posts/' + post.id) #{post.get('title')}
+      h5 #{formatTime(post.createdAt)}
+      p !{snippet(post.get('body'), 210)}
+  - })
+  

@@ -1,0 +1,13 @@
+form.new_comment(method='post', action='/posts/#{post.id}/comments')
+  .form_title Write a comment
+  .form_section
+    label Your Name
+    input.comment_author(name='author', placeholder='Your name')
+   .form_section
+    label Your Email
+    input.comment_author(name='author_email', placeholder='Your email')
+  .form_section
+    label Comment
+    textarea.comment_body(name='body')
+  .form_section
+    input.button_write_comment(type='submit', value='Submit')

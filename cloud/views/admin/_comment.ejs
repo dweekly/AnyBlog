@@ -1,0 +1,21 @@
+<div class='comment_item'>
+  <div class='comment_body'>
+    <%= comment.get('body') %>
+  </div>
+  
+  <div class='comment_footer'>
+    <%= comment.get('author') %>
+    <div class='pipe_separator'>|</div>
+    <%= formatTime(comment.createdAt) %>
+  </div>
+
+  <div class='comment_actions'>
+      <a href="<%= '/posts/' + comment.get('post').id %>">go to post</a>
+      <form class='link_button_form' method='post' action="<%= '/posts/' + comment.get('post').id + '/comments/' + comment.id %>">
+        <!-- This hidden element causes express.methodOverride middleware to override
+        the HTTP method from post to delete for a truly RESTful interface. -->
+        <input type='hidden' name='_method' value='delete' />
+        <input class='link_button' type='submit' value='delete' />
+      </form>
+  </div>
+</div>

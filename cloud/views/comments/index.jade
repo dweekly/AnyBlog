@@ -1,0 +1,16 @@
+- var stylesheet = "admin"
+- var title = "Admin - Comments"
+include ../_header
+
+.all_comments_body
+  .all_posts_link
+    a(href='/admin') all posts
+  .comments_container
+    - if (!_.isEmpty(comments)) {
+      h2 All Comments
+      - comments.forEach(function(comment) {
+        include ../admin/_comment
+      - })
+    - } else {
+      p No comments yet.
+    - }

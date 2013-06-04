@@ -1,0 +1,24 @@
+<!-- Include the header partial -->
+<% include ../_header %>
+
+<!-- content -->
+<div class="sidebar">
+    <div class="picture">
+        <% var hash = hex_md5(userEmail); %>
+      	<img src=<%= 'https://secure.gravatar.com/avatar/' + hash + '?size=220&default=https%3A%2F%2Fwww.parse.com%2Fimages%2Faccounts%2Fno_avatar.png' %> />  </div>
+  	<div class="username"><%= userDisplayName %></div>
+  	<div class="blog_description"><%= userDescription %></div>
+</div>
+  	
+<div class="main_content">
+  	<% posts.forEach(function(post) { %>
+  		<div class="post_link">
+	  		<h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a></h1>
+	  		<h5><%= formatTime(post.createdAt) %></h5>
+	  		<p><%- snippet(post.get("body"), 210) %></p>
+  		</div>
+    <% }) %>
+</div>
+
+<!-- Include the footer partial -->
+<% include ../_footer %>

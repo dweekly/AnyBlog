@@ -1,0 +1,16 @@
+- var stylesheet = "admin"
+- var title = "Admin - Edit Post"
+include ../_header
+
+form(class='edit_post', method='post', action='/posts/#{post.id}')
+  .form_section
+    label Title
+    input(class='post_title', name='title', value="#{post.get('title')}")
+  .form_section
+    label Body
+    textarea(class='post_body', name='body')= post.get('body')
+  .form_section
+    // This hidden element causes express.methodOverride middleware to override
+    // the HTTP method from post to put for a truly RESTful interface.
+    input(type='hidden', name='_method', value='put')
+    input(class='button', type='submit', value='Update')

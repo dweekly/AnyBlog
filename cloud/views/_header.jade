@@ -1,0 +1,7 @@
+html
+  head
+    meta(charset="utf-8")
+    title #{typeof title === "undefined" ? "AnyBlog" : title}
+    link(rel='stylesheet', href='/stylesheets/' + ((typeof stylesheet === "undefined") ? "main" : stylesheet) + '.css')
+    link(rel="icon", href="/favicon.ico", type="image/x-icon")
+    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")

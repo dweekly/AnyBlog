@@ -1,0 +1,21 @@
+- var stylesheet = "admin"
+- var title = "Admin"
+include ../_header
+
+.blog_body
+  .blog_actions
+    a(href='/') back to blog
+    .pipe_separator |
+    a(href='/posts/new') new post
+    .pipe_separator |
+    a(href='/admin/comments') all comments
+
+  h1 AnyBlog - Admin
+  - if (!_.isEmpty(posts)) {
+    .post_container
+      - posts.forEach(function(post) {
+        include _post
+      - })
+  - } else {
+    div No posts yet.
+  - }

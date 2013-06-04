@@ -1,0 +1,13 @@
+include ../_header
+
+.header
+include _post
+
+.comments
+  .number #{comments.length} #{comments.length === 1 ? 'comment' : 'comments'}
+
+  - comments.forEach(function(comment) {
+    include ../comments/_comment
+  - })
+
+  include ../comments/_new

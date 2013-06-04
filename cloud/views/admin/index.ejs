@@ -1,0 +1,25 @@
+<% var stylesheet = "admin" %>
+<% var title = "Admin" %>
+<% include ../_header %>
+
+<div class='blog_body'>
+	<div class='blog_actions'>
+		<a href='/'>back to blog</a>
+	  	<div class='pipe_separator'>|</div>
+	  	<a href='/posts/new'>new post</a>
+	  	<div class='pipe_separator'>|</div>
+	  	<a href='/admin/comments'>all comments</a>
+	</div>
+  	<h1>AnyBlog - Admin</h1>
+  	<% if (!_.isEmpty(posts)) { %>
+    	<div class='post_container'>
+      		<% posts.forEach(function(post) { %>
+        		<% include _post %>
+     		<% }) %>
+    	</div>
+    <% } else { %>
+        <div>No posts yet.</div>
+  	<% } %>
+</div>
+
+<% include ../_footer %>

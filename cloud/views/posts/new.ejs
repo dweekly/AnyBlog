@@ -1,0 +1,18 @@
+<% var stylesheet = "admin" %>
+<% include ../_header %>
+
+<form class='new_post' method='post' action='/posts'>
+  <div class='form_section'>
+    <label>Title</label>
+    <input class='post_title' name='title' />
+  </div>
+  <div class='form_section'>
+    <label>Body</label>
+    <textarea class='post_body' name='body'></textarea>
+  </div>
+  <div class='form_section'>
+    <input class='button' type='submit' value='Publish' />
+  </div>
+</form>
+
+<% include ../_footer %>

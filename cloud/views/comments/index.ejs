@@ -1,0 +1,19 @@
+<% var stylesheet = "admin" %>
+<% var title = "Admin - Comments" %>
+<% include ../_header %>
+
+<div class='all_comments_body'>
+  <div class='all_posts_link'><a href='/admin'>all posts</a></div>
+  <div class='comments_container'>
+    <% if (!_.isEmpty(comments)) { %>
+      <h2>All Comments</h2>
+      <% comments.forEach(function(comment) { %>
+        <% include ../admin/_comment %>
+      <% }) %>
+    <% } else { %>
+      <p>No comments yet.</p>
+    <% } %>
+  </div>
+</div>
+
+<% include ../_footer %>

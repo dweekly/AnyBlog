@@ -1,0 +1,12 @@
+.post_item
+  .post_date= formatTime(post.createdAt)
+  a(class='post_title', href='/posts/#{post.id}')= post.get('title')
+  .post_body= post.get('body')
+  .post_actions
+    a(class='link_button', href='/posts/#{post.id}/edit') edit
+    .pipe_separator |
+    form(class='link_button_form', method='post', action='/posts/#{post.id}')
+      // This hidden element causes express.methodOverride middleware to override
+      // the HTTP method from post to delete for a truly RESTful interface.
+      input(type='hidden', name='_method', value='DELETE')
+      input(class='link_button', type='submit', value='delete')

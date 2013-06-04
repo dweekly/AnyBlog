@@ -1,0 +1,14 @@
+.comment_item
+  .comment_body= comment.get('body')
+  .comment_footer
+    | #{comment.get('author')}
+    .pipe_separator |
+    | #{formatTime(comment.createdAt)}
+  .comment_actions
+      a(href="/posts/#{comment.get('post').id}") go to post
+      form(class='link_button_form', action="/posts/#{comment.get('post').id}/comments/#{comment.id}", method='post')
+        // This hidden element causes express.methodOverride middleware to override
+        // the HTTP method from post to delete for a truly RESTful interface.
+        input(type='hidden', name='_method', value='delete')
+        | &nbsp&nbsp
+        input(class='link_button', type='submit', value='delete')

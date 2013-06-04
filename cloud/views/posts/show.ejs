@@ -1,0 +1,20 @@
+<!-- Include the header partial and specify a title -->
+<% title = post.get('title') %>
+<% include ../_header %>
+
+<!-- content -->
+<div class='header'></div>
+  
+<% include _post %>
+
+<div class='comments'>
+    <div class='number'><%= comments.length %> <%= comments.length === 1 ? 'comment' :  'comments' %></div>
+    
+    <% comments.forEach(function(comment) { %>
+        <% include ../comments/_comment %>
+    <% }) %>
+    <% include ../comments/_new %>
+</div>
+
+<!-- Include the footer partial -->
+<% include ../_footer %>

@@ -1,0 +1,12 @@
+- var stylesheet = "admin"
+include ../_header
+
+form(class='new_post', method='post', action='/posts')
+  .form_section
+    label Title
+    input(class='post_title', name='title')
+  .form_section
+    label Body
+    textarea(class='post_body', name='body')
+  .form_section
+    input(class='button', type='submit', value='Publish')
